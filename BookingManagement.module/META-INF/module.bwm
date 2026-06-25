@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_n43UMGsaEfGtQJ3bgdW8iA" targetNamespace="http://tns.tibco.com/bw/composite/BookingManagement.module" name="BookingManagement.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_mFR44mspEfGtQJ3bgdW8iA" name="bookingmanagementrest" promote="ComponentBookingManagementREST/bookingmanagementrest">
+    <sca:interface.wsdl xmi:id="_mFR45mspEfGtQJ3bgdW8iA" interface="http://xmlns.example.com/20260618172301PLT#wsdl.interface(bookingmanagementrest)" scaext:wsdlLocation="../Processes/bookingmanagement/module/BookingManagementREST.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_mFUVIGspEfGtQJ3bgdW8iA" name="RestService" path="/bookings" docBasePath="http://localhost:7777/BookingManagement.module" docResourcePath="BookingManagement" basePath="/" connector="bookingmanagement.module.BookingManagement" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/bookingmanagement.module.BookingManagementREST-BookingManagementREST.json">
+      <operation xmi:id="_mFVjQGspEfGtQJ3bgdW8iA" operationName="post" nickname="post-bookingmanagementrest" httpMethod="POST" notes="postBookingManagementREST" responseStyle="element" requestStyle="element" outputPartName="item">
+        <parameters xmi:id="_ZDF-EGuvEfG9s7fNAVDdeA">
+          <parameterMapping xmi:id="_ZDF-EWuvEfG9s7fNAVDdeA" parameterName="clientId" parameterType="Query" dataType="integer#int32" required="true"/>
+          <parameterMapping xmi:id="_ibssMGuvEfG9s7fNAVDdeA" parameterName="ObjectID" parameterType="Header" dataType="string" required="true"/>
+        </parameters>
+        <responseStatus xmi:id="_ZxBxYG48EfG6DcIRd0jAMg" statusCode="500" reasonPhrase="Internal Server Error" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_mFVjQWspEfGtQJ3bgdW8iA" operationName="get" nickname="get-bookingmanagementrest" httpMethod="GET" notes="getBookingManagementREST" responseStyle="array" outputPartName="item">
+        <parameters xmi:id="_3iCMwGuvEfG9s7fNAVDdeA">
+          <parameterMapping xmi:id="_3iCMwWuvEfG9s7fNAVDdeA" parameterName="clientId" parameterType="Query" dataType="integer#int32" required="true"/>
+          <parameterMapping xmi:id="_VZ29oG4MEfGkT_KE7AuYUQ" parameterName="ObjectID" parameterType="Header" dataType="string" required="true"/>
+        </parameters>
+        <responseStatus xmi:id="_b9PKQG48EfG6DcIRd0jAMg" statusCode="500" reasonPhrase="Internal Server Error" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <advancedConfig xmi:id="_mFUVIWspEfGtQJ3bgdW8iA" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_mFVjQmspEfGtQJ3bgdW8iA" bindingName="RestService"/>
+  </sca:service>
+  <sca:service xmi:id="_VG5p8mveEfGZ7sVbhQdDig" name="bookings" promote="ComponentBookingManagementREST/bookings">
+    <sca:interface.wsdl xmi:id="_VHL90WveEfGZ7sVbhQdDig" interface="http://xmlns.example.com/20260618172301PLT#wsdl.interface(bookings)" scaext:wsdlLocation="../Processes/bookingmanagement/module/BookingManagementREST.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_VHW88GveEfGZ7sVbhQdDig" name="RestService1" path="/bookings/{bookingId}" docBasePath="http://localhost:7777/BookingManagement.module" docResourcePath="BookingManagement" basePath="/" connector="bookingmanagement.module.BookingManagement" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/bookingmanagement.module.BookingManagementREST-BookingManagement.json">
+      <operation xmi:id="_VHZZMGveEfGZ7sVbhQdDig" operationName="get" nickname="get-bookings" httpMethod="GET" notes="getBookingManagement" responseStyle="element" outputPartName="item">
+        <parameters xmi:id="_q2KukGvlEfGZ7sVbhQdDig">
+          <parameterMapping xmi:id="_q2KukWvlEfGZ7sVbhQdDig" parameterName="ObjectID" parameterType="Header" dataType="string" required="true"/>
+        </parameters>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_VHZZMWveEfGZ7sVbhQdDig" operationName="put" nickname="put-bookings" httpMethod="PUT" notes="putBookingManagement" responseStyle="element" requestStyle="element" outputPartName="item">
+        <parameters xmi:id="_yCLCQGvlEfGZ7sVbhQdDig">
+          <parameterMapping xmi:id="_yCLCQWvlEfGZ7sVbhQdDig" parameterName="ObjectID" parameterType="Header" dataType="string" required="true"/>
+        </parameters>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_VHZZMmveEfGZ7sVbhQdDig" operationName="delete" nickname="delete-bookings" httpMethod="DELETE" notes="deleteBookingManagement" responseStyle="element" outputPartName="msg">
+        <parameters xmi:id="_6eQdwGvlEfGZ7sVbhQdDig">
+          <parameterMapping xmi:id="_6eQdwWvlEfGZ7sVbhQdDig" parameterName="ObjectID" parameterType="Header" dataType="string" required="true"/>
+        </parameters>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_VIdJIGveEfGZ7sVbhQdDig">
+        <parameterMapping xmi:id="_VIdJIWveEfGZ7sVbhQdDig" parameterName="bookingId" parameterType="Path" required="true"/>
+      </parameters>
+      <advancedConfig xmi:id="_VHW88WveEfGZ7sVbhQdDig" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_VHZZM2veEfGZ7sVbhQdDig" bindingName="RestService1"/>
+  </sca:service>
+  <sca:property xmi:id="_rDPlgGsaEfGtQJ3bgdW8iA" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_rDYIYGsaEfGtQJ3bgdW8iA" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_rDZ9kGsaEfGtQJ3bgdW8iA" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_rDdA4GsaEfGtQJ3bgdW8iA" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_rDgEMGsaEfGtQJ3bgdW8iA" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_rDgrQGsaEfGtQJ3bgdW8iA" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_rDljwGsaEfGtQJ3bgdW8iA" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_rDnY8GsaEfGtQJ3bgdW8iA" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_rDqcQGsaEfGtQJ3bgdW8iA" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_mFQqwGspEfGtQJ3bgdW8iA" name="ComponentBookingManagementREST" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_mFQqwWspEfGtQJ3bgdW8iA" processName="bookingmanagement.module.BookingManagementREST"/>
+    <sca:service xmi:id="_mFR44GspEfGtQJ3bgdW8iA" name="bookingmanagementrest">
+      <sca:interface.wsdl xmi:id="_mFR44WspEfGtQJ3bgdW8iA" interface="http://xmlns.example.com/20260618172301PLT#wsdl.interface(bookingmanagementrest)" scaext:wsdlLocation="../Processes/bookingmanagement/module/BookingManagementREST.bwp"/>
+    </sca:service>
+    <sca:service xmi:id="_VG5p8GveEfGZ7sVbhQdDig" name="bookings">
+      <sca:interface.wsdl xmi:id="_VG5p8WveEfGZ7sVbhQdDig" interface="http://xmlns.example.com/20260618172301PLT#wsdl.interface(bookings)"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

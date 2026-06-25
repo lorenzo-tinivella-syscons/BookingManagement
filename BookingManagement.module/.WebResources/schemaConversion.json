@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/BookingManagement.module/Service Descriptors/bookingmanagement.module.BookingManagementREST-BookingManagementREST.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/BookingSchema"
+    },
+    {
+        "jsonSchemaLocation": "/BookingManagement.module/Service Descriptors/bookingmanagement.module.BookingManagementREST-BookingManagement.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/BookingSchema"
+    }
+]}

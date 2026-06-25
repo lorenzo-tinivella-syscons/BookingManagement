@@ -1,0 +1,140 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "BookingManagementREST",
+    "description" : "BookingManagementREST service"
+  },
+  "host" : "localhost:8081",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/bookings" : {
+      "post" : {
+        "summary" : "postBookingManagementREST",
+        "description" : "postBookingManagementREST",
+        "operationId" : "post-bookingmanagementrest",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/BookingRegistrationRequest"
+          },
+          "required" : true
+        }, {
+          "name" : "clientId",
+          "in" : "query",
+          "description" : "",
+          "type" : "integer",
+          "format" : "int32",
+          "required" : true
+        }, {
+          "name" : "ObjectID",
+          "in" : "header",
+          "description" : "",
+          "type" : "string",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a BookingRegistrationResponse to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/BookingRegistrationResponse"
+            }
+          }
+        }
+      },
+      "get" : {
+        "summary" : "getBookingManagementREST",
+        "description" : "getBookingManagementREST",
+        "operationId" : "get-bookingmanagementrest",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "clientId",
+          "in" : "query",
+          "description" : "",
+          "type" : "integer",
+          "format" : "int32",
+          "required" : true
+        }, {
+          "name" : "ObjectID",
+          "in" : "header",
+          "description" : "",
+          "type" : "string",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a BookingListResponse to be returned",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/BookingListResponse",
+                "uniqueItems" : false
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "BookingRegistrationRequest" : {
+      "type" : "object",
+      "required" : [ "NumberOfPeople", "DateTime" ],
+      "properties" : {
+        "DateTime" : {
+          "type" : "string"
+        },
+        "NumberOfPeople" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "BookingListResponse" : {
+      "type" : "object",
+      "required" : [ "Booking" ],
+      "properties" : {
+        "Booking" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Booking",
+            "uniqueItems" : false
+          }
+        }
+      }
+    },
+    "BookingRegistrationResponse" : {
+      "type" : "object",
+      "required" : [ "BookingId" ],
+      "properties" : {
+        "BookingId" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "Booking" : {
+      "type" : "object",
+      "required" : [ "BookingId", "NumberOfPeople", "DateTime" ],
+      "properties" : {
+        "BookingId" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "DateTime" : {
+          "type" : "string"
+        },
+        "NumberOfPeople" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    }
+  }
+}

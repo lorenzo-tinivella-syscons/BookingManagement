@@ -1,0 +1,17 @@
+{
+    "records": [],
+    "resources": [
+        {
+            "location": "Service Descriptors/bookingmanagement.module.BookingManagement-BookingManagement.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/bookingmanagement.module.BookingManagementREST-BookingManagement.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/bookingmanagement.module.BookingManagementREST-BookingManagementREST.json",
+            "type": "generated"
+        }
+    ]
+}
