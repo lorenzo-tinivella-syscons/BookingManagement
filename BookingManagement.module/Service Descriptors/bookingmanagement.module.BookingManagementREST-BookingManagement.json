@@ -49,7 +49,7 @@
           "in" : "body",
           "description" : "",
           "schema" : {
-            "$ref" : "#/definitions/BookingInfo"
+            "$ref" : "#/definitions/UpdateBookingRequest"
           },
           "required" : true
         }, {
@@ -190,6 +190,19 @@
   },
   "definitions" : {
     "BookingRegistrationRequest" : {
+      "type" : "object",
+      "required" : [ "NumberOfPeople", "DateTime" ],
+      "properties" : {
+        "DateTime" : {
+          "type" : "string"
+        },
+        "NumberOfPeople" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "UpdateBookingRequest" : {
       "type" : "object",
       "required" : [ "NumberOfPeople", "DateTime" ],
       "properties" : {

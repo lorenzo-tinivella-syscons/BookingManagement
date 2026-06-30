@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:Q1="http://tns.tibco.com/bw/REST" xmlns:source="bw.rest" xmlns:tns="http://xmlns.example.com/BookingManagement/headerParameters" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://xmlns.example.com/BookingManagement/headerParameters">
+    
+  <xs:import namespace="http://tns.tibco.com/bw/REST"/>
+    
+  <xs:complexType name="clients-clientIdGetHeaderType">
+        
+    <xs:complexContent>
+            
+      <xs:extension base="Q1:httpTransportHeaders">
+                
+        <xs:sequence>
+                    
+          <xs:element maxOccurs="1" minOccurs="1" name="ObjectID" type="xs:string"/>
+                  
+        </xs:sequence>
+              
+      </xs:extension>
+          
+    </xs:complexContent>
+      
+  </xs:complexType>
+    
+  <xs:element name="clients-clientIdGetHeader" type="tns:clients-clientIdGetHeaderType"/>
+    
+  <xs:complexType name="clients-clientIdDeleteHeaderType">
+        
+    <xs:complexContent>
+            
+      <xs:extension base="Q1:httpTransportHeaders">
+                
+        <xs:sequence>
+                    
+          <xs:element maxOccurs="1" minOccurs="1" name="ObjectID" type="xs:string"/>
+                  
+        </xs:sequence>
+              
+      </xs:extension>
+          
+    </xs:complexContent>
+      
+  </xs:complexType>
+    
+  <xs:element name="clients-clientIdDeleteHeader" type="tns:clients-clientIdDeleteHeaderType"/>
+    
+  <xs:complexType name="clients-clientIdPutHeaderType">
+        
+    <xs:complexContent>
+            
+      <xs:extension base="Q1:httpTransportHeaders">
+                
+        <xs:sequence>
+                    
+          <xs:element maxOccurs="1" minOccurs="1" name="ObjectID" type="xs:string"/>
+                  
+        </xs:sequence>
+              
+      </xs:extension>
+          
+    </xs:complexContent>
+      
+  </xs:complexType>
+    
+  <xs:element name="clients-clientIdPutHeader" type="tns:clients-clientIdPutHeaderType"/>
+  
+</xs:schema>
