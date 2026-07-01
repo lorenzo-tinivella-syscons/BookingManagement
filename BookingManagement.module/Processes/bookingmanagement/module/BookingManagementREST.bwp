@@ -1606,14 +1606,13 @@
                                     <styles xsi:type="bwnotation:BackgroundStyle"/>
 
                                     <styles
-                                    collapsed="true"
                                     restoreHeight="178"
                                     restoreWidth="664" xsi:type="bwnotation:ResizingStyle"/>
 
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@faultHandlers/@catchAll"/>
 
                                     <layoutConstraint
-                                    height="22"
+                                    height="178"
                                     width="664" xsi:type="notation:Bounds"/>
                                     </children>
 
@@ -1633,10 +1632,10 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@faultHandlers"/>
 
                                     <layoutConstraint
-                                    height="44"
+                                    height="200"
                                     width="674"
                                     x="21"
-                                    xsi:type="notation:Bounds" y="236"/>
+                                    xsi:type="notation:Bounds" y="237"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -1650,7 +1649,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity"/>
 
                                     <layoutConstraint
-                                    height="281"
+                                    height="438"
                                     width="734" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1713,7 +1712,7 @@
                                     restoreX="2" xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0"/>
                                     <layoutConstraint
-                                    height="301"
+                                    height="457"
                                     width="796"
                                     x="2" xsi:type="notation:Bounds"/>
                                     </children>
@@ -4281,7 +4280,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0"/>
                                     <layoutConstraint
-                                    height="1887"
+                                    height="2047"
                                     width="815" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -4296,7 +4295,7 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="2053"
+                                    <layoutConstraint height="2057"
                                     width="825" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
@@ -4306,7 +4305,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="2053" width="828" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="2057" width="828" xsi:type="notation:Bounds"/>
                         </children>
                         <styles xsi:type="notation:SortingStyle"/>
                         <styles xsi:type="notation:FilteringStyle"/>
@@ -4316,7 +4315,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="2077" width="828" x="1"
+                    <layoutConstraint height="2081" width="828" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -4325,7 +4324,7 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="2129" width="1170" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="2133" width="1170" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -4962,9 +4961,9 @@
                                     <bpws:source linkName="SendHTTPRequestToCallProcess_BookingRegistration">
                                     <tibex:DesignExpression>
                                     <tibex:expression
-                                    expression="string-length( $SendHTTPRequest/asciiContent ) > 0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="not(matches($SendHTTPRequest/asciiContent, '&quot;Name&quot;\s*:\s*(&quot;&quot;|null)'))" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                                     </tibex:DesignExpression>
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[string-length( $SendHTTPRequest/asciiContent ) > 0]]></bpws:transitionCondition>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[not(matches($SendHTTPRequest/asciiContent, '"Name"\s*:\s*(""|null)'))]]></bpws:transitionCondition>
                                     </bpws:source>
                                     <bpws:source linkName="SendHTTPRequestToThrow">
                                     <tibex:DesignExpression>
@@ -5228,9 +5227,9 @@
                                     <bpws:source linkName="SendHTTPRequest1ToCallProcess_RetrieveBooking">
                                     <tibex:DesignExpression>
                                     <tibex:expression
-                                    expression="string-length( $SendHTTPRequest1/asciiContent ) > 0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="not(matches($SendHTTPRequest1/asciiContent, '&quot;Name&quot;\s*:\s*(&quot;&quot;|null)'))" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                                     </tibex:DesignExpression>
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[string-length( $SendHTTPRequest1/asciiContent ) > 0]]></bpws:transitionCondition>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[not(matches($SendHTTPRequest1/asciiContent, '"Name"\s*:\s*(""|null)'))]]></bpws:transitionCondition>
                                     </bpws:source>
                                     <bpws:source linkName="SendHTTPRequest1ToThrow1">
                                     <tibex:DesignExpression>
